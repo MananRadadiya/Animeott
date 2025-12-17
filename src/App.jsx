@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route, useParams } from "react-router-dom";
 import "./App.css";
 
-/* COMMON COMPONENTS */
 import Navigation from "./Navigation";
 import HeroSlider from "./HeroSlider";
 import Popular from "./Popular";
@@ -17,7 +16,6 @@ import LoginPage from "./LoginPage";
 import SignupPage from "./SignupPage";
 import AdminPage from "./AdminPage";
 
-/* PLACEHOLDER PAGES */
 const BlogPage = () => (
   <h2 style={{ color: "white", padding: "2rem" }}>Blog Page</h2>
 );
@@ -26,7 +24,6 @@ const ContactsPage = () => (
   <h2 style={{ color: "white", padding: "2rem" }}>Contacts Page</h2>
 );
 
-/* CATEGORY DYNAMIC PAGE */
 const CategoryPage = () => {
   const { categorySlug } = useParams();
   return (
@@ -55,7 +52,6 @@ function App() {
           }
         />
 
-        {/* STATIC PAGES */}
         <Route path="/blog" element={<Details />} />
         <Route path="/contacts" element={<ContactsPage />} />
 
@@ -65,14 +61,12 @@ function App() {
         <Route path="/category/details" element={<Details />} />
         <Route path="/category/watch" element={<Watch />} />
 
-        {/* AUTH */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
 
         {/* ADMIN */}
         <Route path="/admin" element={<AdminPage />} />
 
-        {/* CATEGORY DYNAMIC */}
         <Route path="/category/:categorySlug" element={<CategoryPage />} />
       </Routes>
 
